@@ -1,2 +1,2 @@
 library(idionomics)
-imputated_data <- imputatron_2000(
+imputated_data <- imputatron_2000()
