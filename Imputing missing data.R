@@ -83,11 +83,11 @@ residuals_results <- calculate_residuals(final_data)
 library(Boruta)
 
 # Sequential version of TS-Boruta analysis
-TS_boruta_results <- lapply(residuals_results, function(individual_data) {
+TS_boruta_results <- lapply(residuals_results, function(residuals_results) {
   Boruta(
     MinutesPulling ~ AffAnx + AffBored + CogWorrieAway + CogFix + 
       SensHand + SenseHair + AttThts + ValueImp + BehvStim,
-    data = individual_data,
+    data = residuals_results,
     maxRuns = 500,
     doTrace = 3 
   )
